@@ -4,13 +4,13 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { FireBaseService } from '../../firebase/firebase.service';
+import { FirebaseService } from '../../firebase/firebase.service';
 import { Observable } from 'rxjs';
 import { auth } from 'firebase-admin';
 
 @Injectable()
 export class FirebaseAuthGuard implements CanActivate {
-  constructor(private firebaseService: FireBaseService) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const req = context.switchToHttp().getRequest();
@@ -22,5 +22,13 @@ export class FirebaseAuthGuard implements CanActivate {
     }
 
     const token = authHeader.split(' ')[1];
+
+    try {
+      const decoded = await this.firebaseService.verifyToken(token);
+      req.user = decoded;
+      return true;
+    } catch (error) {
+      throw new UnauthorizedException('Token invalido');
+    }
   }
 }

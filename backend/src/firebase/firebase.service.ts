@@ -2,7 +2,7 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import * as admin from 'firebase-admin';
 
 @Injectable()
-export class FireBaseService implements OnModuleInit {
+export class FirebaseService implements OnModuleInit {
   onModuleInit() {
     admin.initializeApp({
       credential: admin.credential.cert({
