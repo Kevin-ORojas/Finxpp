@@ -69,7 +69,13 @@ function RegisterForm() {
           onChange={handleChange}
         />
         <ButtonForm />
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           {isRegistered ? (
             <>
               ¿Estás registrado? <LoginForm />
