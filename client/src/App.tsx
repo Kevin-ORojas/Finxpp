@@ -1,12 +1,11 @@
-import React from 'react'
+import RegisterForm from "./components/form/ui/RegisterForm";
 
 function App() {
   return (
     <div>
-      
+      <RegisterForm />
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;
