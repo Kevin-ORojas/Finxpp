@@ -1,14 +1,15 @@
-import { Margin } from "@mui/icons-material";
+
 import RegisterForm from "./components/form/ui/RegisterForm";
-import Sidebar from "./components/sidebar/Sidebar";
-import { Box } from "@mui/material";
+
+import Dashboard from "./pages/Dashboard";
+import Layout from "./components/layout/Layout";
 
 function App() {
   return (
-    <Box sx={{ marginLeft: "60px" }}>
-      <Sidebar />
+    <Layout >
+      <Dashboard />
       <RegisterForm />
-    </Box>
+    </Layout>
   );
 }
 

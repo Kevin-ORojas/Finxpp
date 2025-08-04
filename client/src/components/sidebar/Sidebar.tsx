@@ -2,25 +2,19 @@ import {
   Drawer,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
   Toolbar,
-  useMediaQuery,
+
   // useTheme,
 } from "@mui/material";
 import { sidebarItems } from "./sidebar.config";
-import { useState, useEffect } from "react";
 
-function Sidebar() {
-  // const theme = useTheme();
-  const isMobile = useMediaQuery("(max-width:930px)");
+interface SidebarProps {
+  open: boolean;
+}
 
-  const [open, setOpen] = useState(true);
-
-  // Detectar automáticamente si estamos en móvil y cerrar el sidebar
-  useEffect(() => {
-    setOpen(!isMobile);
-  }, [isMobile]);
-
+function Sidebar({ open }: SidebarProps) {
   const drawerWidth = 240;
   const miniWidth = 60;
 
@@ -35,14 +29,34 @@ function Sidebar() {
           boxSizing: "border-box",
           transition: "width 0.3s",
           overflowX: "hidden",
+          backgroundColor: "#1e1e2f",
         },
       }}
     >
       <Toolbar sx={{ justifyContent: open ? "flex-end" : "center" }} />
 
-      <List>
+      <List sx={{ p: 0.5 }}>
         {sidebarItems.map((item) => (
-          <ListItem key={item.id} component="button">
+          <ListItem
+            sx={{
+              my: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: open ? 2 : 10,
+            }}
+            key={item.id}
+            component="button"
+          >
+            <ListItemIcon
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {item.icon}
+            </ListItemIcon>
             {open && <ListItemText primary={item.label} />}
           </ListItem>
         ))}
