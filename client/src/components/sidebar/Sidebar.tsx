@@ -9,6 +9,7 @@ import {
   // useTheme,
 } from "@mui/material";
 import { sidebarItems } from "./sidebar.config";
+import { Link } from "react-router-dom";
 
 interface SidebarProps {
   open: boolean;
@@ -38,6 +39,9 @@ function Sidebar({ open }: SidebarProps) {
       <List sx={{ p: 0.5 }}>
         {sidebarItems.map((item) => (
           <ListItem
+            key={item.id}
+            component={Link}
+            to={item.path}
             sx={{
               my: 2,
               display: "flex",
@@ -45,8 +49,6 @@ function Sidebar({ open }: SidebarProps) {
               justifyContent: "center",
               borderRadius: open ? 2 : 10,
             }}
-            key={item.id}
-            component="button"
           >
             <ListItemIcon
               sx={{
