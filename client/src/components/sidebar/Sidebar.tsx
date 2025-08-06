@@ -30,7 +30,7 @@ function Sidebar({ open }: SidebarProps) {
           boxSizing: "border-box",
           transition: "width 0.3s",
           overflowX: "hidden",
-          backgroundColor: "#1e1e2f",
+          // backgroundColor: "#1e1e2f",
         },
       }}
     >
@@ -48,6 +48,7 @@ function Sidebar({ open }: SidebarProps) {
               alignItems: "center",
               justifyContent: "center",
               borderRadius: open ? 2 : 10,
+              color: "#000",
             }}
           >
             <ListItemIcon

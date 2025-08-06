@@ -69,7 +69,7 @@ function RegisterForm() {
           onChange={handleChange}
         />
         <ButtonForm />
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
             alignItems: "center",
@@ -83,7 +83,7 @@ function RegisterForm() {
           ) : (
             "Por favor, regístrate primero."
           )}
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );
