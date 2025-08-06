@@ -21,11 +21,16 @@ export const sidebarItems: SidebarItem[] = [
     icon: <PersonIcon />,
     path: "transaccion",
   },
-  { id: "gastos", label: "gastos", icon: <MoneyOffIcon />, path: "gastos" },
   {
     id: "Prestamos",
     label: "Prestamos",
+    icon: <MoneyOffIcon />,
+    path: "prestamos",
+  },
+  {
+    id: "Historial",
+    label: "Historial",
     icon: <AccountBalanceIcon />,
-    path: "login",
+    path: "historial",
   },
 ];

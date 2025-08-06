@@ -30,7 +30,7 @@ function Sidebar({ open }: SidebarProps) {
           boxSizing: "border-box",
           transition: "width 0.3s",
           overflowX: "hidden",
-          // backgroundColor: "#1e1e2f",
+          backgroundColor: "#031926",
         },
       }}
     >
@@ -48,7 +48,11 @@ function Sidebar({ open }: SidebarProps) {
               alignItems: "center",
               justifyContent: "center",
               borderRadius: open ? 2 : 10,
-              color: "#000",
+              color: "#FFFFFF",
+              "&:hover": {
+                backgroundColor: "#36A5A9",
+                transition: "background-color 0.3s ease",
+              },
             }}
           >
             <ListItemIcon
@@ -56,6 +60,7 @@ function Sidebar({ open }: SidebarProps) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                color: "#ffffff",
               }}
             >
               {item.icon}
