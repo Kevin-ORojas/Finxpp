@@ -3,6 +3,7 @@ import Dashboard from "../../pages/Dashboard";
 import RegisterForm from "../form/ui/RegisterForm";
 import LoginForm from "../form/LoginForm";
 import Transaccion from "../transaccion/Transaccion";
+import Historial from "../historial/Historial";
 
 function RoutesApp() {
   return (
@@ -11,6 +12,7 @@ function RoutesApp() {
       <Route path="register" element={<RegisterForm />} />
       <Route path="login" element={<LoginForm />} />
       <Route path="transaccion" element={<Transaccion />} />
+      <Route path="historial" element={<Historial />} />
     </Routes>
   );
 }
