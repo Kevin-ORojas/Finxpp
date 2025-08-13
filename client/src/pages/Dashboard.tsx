@@ -37,7 +37,7 @@ function Dashboard() {
             borderRadius: 10,
           }}
         >
-          {datos}
+          <p>{datos}</p>
         </Box>
         <Box
           sx={{
