@@ -1,18 +1,45 @@
 import { Box, Button, TextField } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface Transaction {
-  id: number;
+  id: string;
   amount: number;
   description: string;
 }
 
 function Transaccion() {
   const [transaction, setTransactions] = useState<Transaction[]>([]);
+  const [form, setForm] = useState({
+    description: "",
+    amount: "",
+    id: "",
+  });
 
-  const addTransaction = (transaction: Transaction): void => {
-    setTransactions((prev) => [...prev, transaction]);
-    console.log("Transacción agregada:", transaction);
+  const day = new Date();
+  const formatDate = day.toLocaleDateString("es-Es");
+
+  const addTransaction = (): Transaction => {
+    const newTransaction: Transaction = {
+      id: formatDate,
+      amount: Number(form.amount),
+      description: form.description,
+    };
+
+    setTransactions((prev) => {
+      if (prev.some((t) => t.id === newTransaction.id)) return prev;
+      return [...prev, newTransaction];
+    });
+
+    setForm({ description: "", amount: "", id: "" });
+
+    return newTransaction;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
   return (
     <Box>
@@ -23,22 +50,27 @@ function Transaccion() {
         }}
       >
         <TextField
+          name="description"
+          placeholder="descripcion"
+          value={form.description}
+          onChange={handleChange}
           sx={{
             width: "100%",
             px: 2,
           }}
         />
-        <Button
-          onClick={() => {
-            addTransaction({
-              id: Date.now(),
-              amount: 100,
-              description: "Compra supermercado",
-            });
+        <TextField
+          name="amount"
+          placeholder="Monto"
+          value={form.amount}
+          onChange={handleChange}
+          sx={{
+            width: "100%",
+            px: 2,
           }}
-          variant="contained"
-          color="secondary"
-        >
+        />
+
+        <Button onClick={addTransaction} variant="contained" color="secondary">
           Agregar
         </Button>
       </Box>
