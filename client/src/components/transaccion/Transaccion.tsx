@@ -82,13 +82,26 @@ function Transaccion() {
           mt: "2rem",
         }}
       >
-        <ul>
+        <Box
+          sx={{
+            padding: "10px",
+          }}
+        >
           {transaction.map((t) => (
-            <li>
-              {t.description} - ${t.amount} - {t.id}
-            </li>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-around",
+                listStyle: "none",
+              }}
+            >
+              <li>{t.description}</li>
+              <li>${t.amount}</li>
+              <li>{t.id}</li>
+            </Box>
           ))}
-        </ul>
+        </Box>
       </Box>
     </Box>
   );
