@@ -16,7 +16,13 @@ function Transaccion() {
     date: "",
   });
 
-  const addTransaction = (): Transaction => {
+  const addTransaction = (): Transaction | null => {
+    // pregunta si los formularios son diferente a lo que se pide retorna null
+    if (!form.description || !form.amount || !form.date) {
+      alert("Completa todos los campos");
+      return null;
+    }
+
     const newTransaction: Transaction = {
       id: Date.now().toString(),
       amount: Number(form.amount),
@@ -45,6 +51,7 @@ function Transaccion() {
         }}
       >
         <TextField
+          required
           name="description"
           placeholder="descripcion"
           value={form.description}
@@ -55,6 +62,7 @@ function Transaccion() {
           }}
         />
         <TextField
+          required
           name="amount"
           placeholder="Monto"
           value={form.amount}
@@ -66,6 +74,7 @@ function Transaccion() {
         />
 
         <TextField
+          required
           name="date"
           placeholder="DD/MM/AAAA"
           value={form.date}
@@ -106,8 +115,10 @@ function Transaccion() {
                 display: "flex",
                 justifyContent: "space-around",
                 listStyle: "none",
+                mt: 2,
               }}
             >
+              {" "}
               <li>{t.description}</li>
               <li>${t.amount}</li>
               <li>{t.date}</li>
