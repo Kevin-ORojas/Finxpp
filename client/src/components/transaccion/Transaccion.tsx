@@ -5,6 +5,7 @@ interface Transaction {
   id: string;
   amount: number;
   description: string;
+  date: string;
 }
 
 function Transaccion() {
@@ -12,25 +13,19 @@ function Transaccion() {
   const [form, setForm] = useState({
     description: "",
     amount: "",
-    id: "",
+    date: "",
   });
-
-  const day = new Date();
-  const formatDate = day.toLocaleDateString("es-Es");
 
   const addTransaction = (): Transaction => {
     const newTransaction: Transaction = {
-      id: formatDate,
+      id: Date.now().toString(),
       amount: Number(form.amount),
       description: form.description,
+      date: form.date,
     };
 
-    setTransactions((prev) => {
-      if (prev.some((t) => t.id === newTransaction.id)) return prev;
-      return [...prev, newTransaction];
-    });
-
-    setForm({ description: "", amount: "", id: "" });
+    setTransactions((prev) => [...prev, newTransaction]);
+    setForm({ description: "", amount: "", date: "" });
 
     return newTransaction;
   };
@@ -70,12 +65,29 @@ function Transaccion() {
           }}
         />
 
-        <Button onClick={addTransaction} variant="contained" color="secondary">
+        <TextField
+          name="date"
+          placeholder="DD/MM/AAAA"
+          value={form.date}
+          onChange={handleChange}
+          sx={{
+            width: "100%",
+            px: 2,
+          }}
+        />
+
+        <Button
+          sx={{ fontSize: 10 }}
+          onClick={addTransaction}
+          variant="contained"
+          color="secondary"
+        >
           Agregar
         </Button>
       </Box>
       <Box
         sx={{
+          borderRadius: 10,
           border: "2px solid black",
           minHeight: 400,
           height: "auto",
@@ -98,7 +110,7 @@ function Transaccion() {
             >
               <li>{t.description}</li>
               <li>${t.amount}</li>
-              <li>{t.id}</li>
+              <li>{t.date}</li>
             </Box>
           ))}
         </Box>
