@@ -9,6 +9,6 @@ public class Usuario
 
     public string Contraseña { get; set; } = string.Empty;
 
-    public decimal SaldoInicial { get; set; }
+
 
 }
