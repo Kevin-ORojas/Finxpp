@@ -7,8 +7,6 @@ public class Usuario
 
     public string Email { get; set; } = string.Empty;
 
-    public string Contraseña { get; set; } = string.Empty;
-
-
+    public string Contrasena { get; set; } = string.Empty;
 
 }

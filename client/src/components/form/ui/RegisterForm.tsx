@@ -1,7 +1,7 @@
 import { Box, TextField } from "@mui/material";
 import { useState } from "react";
 import ButtonForm from "./ButtonForm";
-import LoginForm from "../LoginForm";
+
 function RegisterForm() {
   const [form, setForm] = useState({
     name: "",
