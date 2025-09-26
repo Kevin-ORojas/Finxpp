@@ -2,10 +2,16 @@ using backend.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Users.Data;
 
 public class UsuarioService
 {
-    private static List<Usuario> usuarios = new List<Usuario>();
+    private readonly AppDbContext _context;
+
+    public UsuarioService(AppDbContext context)
+    {
+        _context = context;
+    }
 
     public Usuario CrearUsuario(Usuario usuario)
     {
@@ -21,15 +27,15 @@ public class UsuarioService
             throw new Exception("Formato de correo invalido");
 
         // verifica emails duplicados
-        if (usuarios.Any(u => u.Email == usuario.Email))
+        if (_context.Usuarios.Any(u => u.Email == usuario.Email))
             throw new Exception("Email duplicado: 400");
 
         // asigna un ID automaticamente
         usuario.Id = usuarios.Any() ? usuarios.Max(u => u.Id) + 1 : 1;
 
         // agrega al usuario
-        usuarios.Add(usuario);
-
+        _context.Usuarios.Add(usuario);
+        _context.SaveChanges();
         return usuario;
     }
 
@@ -42,7 +48,7 @@ public class UsuarioService
 
 
         // Busca al usuario
-        var usuarioEncontrado = usuarios.FirstOrDefault(u => u.Email == Email && u.Contrasena == Contrasena);
+        var usuarioEncontrado = _context.Usuarios.FirstOrDefault(u => u.Email == Email && u.Contrasena == Contrasena);
 
         // si el usuario no tiene nada no se autentica
         if (usuarioEncontrado == null)
@@ -67,7 +73,7 @@ public class UsuarioService
 
     public List<object> ListarUsuarios()
     {
-        return usuarios.Select(u => new { u.Id, u.Nombre, u.Email }).ToList<object>();
+        return _context.Usuarios.Select(u => new { u.Id, u.Nombre, u.Email }).ToList<object>();
     }
 
 }

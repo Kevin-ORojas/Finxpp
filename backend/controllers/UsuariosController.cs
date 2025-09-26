@@ -8,15 +8,19 @@ namespace backend.Controller;
 [Route("api/[controller]")]
 public class UsuariosController : ControllerBase
 {
-    private readonly UsuarioService usuarioService = new UsuarioService();
+    private readonly UsuarioService _usuarioService;
 
+    public UsuariosController(UsuariosService usuariosService)
+    {
+        _usuarioService = usuariosService;
+    }
 
     [HttpPost("register")]
     public IActionResult CrearUsuario(Usuario nuevoUsuario)
     {
         try
         {
-            var usuarioCreado = usuarioService.CrearUsuario(nuevoUsuario);
+            var usuarioCreado = _usuarioService.CrearUsuario(nuevoUsuario);
             return Ok(usuarioCreado);
         }
         catch (Exception ex)
@@ -32,7 +36,7 @@ public class UsuariosController : ControllerBase
     {
         try
         {
-            var usuario = usuarioService.LoginUsuario(login.Email, login.Contrasena);
+            var usuario = _usuarioService.LoginUsuario(login.Email, login.Contrasena);
             // si el usuario tiene todo correcto se autentica exitosamente
             return Ok(new { mensaje = "Usuario autenticado extisoamente", usuario });
         }
@@ -45,7 +49,7 @@ public class UsuariosController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<Usuario>> GetUsuarios()
     {
-        var usuarios = usuarioService.ListarUsuarios();
+        var usuarios = _usuarioService.ListarUsuarios();
         return Ok(usuarios);
     }
 
