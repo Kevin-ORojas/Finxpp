@@ -34,6 +34,7 @@ public class UsuarioService
 
         // asigna un ID automaticamente
         // usuario.Id = _context.Usuarios.Any() ? _context.Usuarios.Max(u => u.Id) + 1 : 1;
+        usuario.Contrasena = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasena);
 
         // agrega al usuario
         _context.Usuarios.Add(usuario);
@@ -50,11 +51,11 @@ public class UsuarioService
 
 
         // Busca al usuario
-        var usuarioEncontrado = _context.Usuarios.FirstOrDefault(u => u.Email == Email && u.Contrasena == Contrasena);
+        var usuarioEncontrado = _context.Usuarios.FirstOrDefault(u => u.Email == Email);
 
         // si el usuario no tiene nada no se autentica
         if (usuarioEncontrado == null)
-            throw new Exception("Email, o contraseña incorrectos");
+            !BCrypt.Net.BCrypt.Verify(Contrasena, usuarioEncontrado.Contrasena);
 
         return usuarioEncontrado;
 

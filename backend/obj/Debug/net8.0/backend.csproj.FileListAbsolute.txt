@@ -138,3 +138,4 @@ C:\Users\kevin\OneDrive\Desktop\Codigo\Finxpp\backend\obj\Debug\net8.0\refint\ba
 C:\Users\kevin\OneDrive\Desktop\Codigo\Finxpp\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\kevin\OneDrive\Desktop\Codigo\Finxpp\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\kevin\OneDrive\Desktop\Codigo\Finxpp\backend\obj\Debug\net8.0\ref\backend.dll
+C:\Users\kevin\OneDrive\Desktop\Codigo\Finxpp\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
