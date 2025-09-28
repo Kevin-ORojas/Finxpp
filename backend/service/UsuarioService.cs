@@ -2,7 +2,9 @@ using backend.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Users.Data;
+using backend.Data;
+
+namespace backend.Services;
 
 public class UsuarioService
 {
@@ -31,7 +33,7 @@ public class UsuarioService
             throw new Exception("Email duplicado: 400");
 
         // asigna un ID automaticamente
-        usuario.Id = usuarios.Any() ? usuarios.Max(u => u.Id) + 1 : 1;
+        // usuario.Id = _context.Usuarios.Any() ? _context.Usuarios.Max(u => u.Id) + 1 : 1;
 
         // agrega al usuario
         _context.Usuarios.Add(usuario);

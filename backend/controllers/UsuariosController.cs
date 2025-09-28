@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.Models;
+using backend.Services;
 
-
-namespace backend.Controller;
+namespace backend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -10,13 +10,13 @@ public class UsuariosController : ControllerBase
 {
     private readonly UsuarioService _usuarioService;
 
-    public UsuariosController(UsuariosService usuariosService)
+    public UsuariosController(UsuarioService usuarioService)
     {
-        _usuarioService = usuariosService;
+        _usuarioService = usuarioService;
     }
 
     [HttpPost("register")]
-    public IActionResult CrearUsuario(Usuario nuevoUsuario)
+    public IActionResult CrearUsuario([FromBody] Usuario nuevoUsuario)
     {
         try
         {
