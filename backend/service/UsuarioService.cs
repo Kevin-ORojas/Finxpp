@@ -55,8 +55,13 @@ public class UsuarioService
 
         // si el usuario no tiene nada no se autentica
         if (usuarioEncontrado == null)
-            !BCrypt.Net.BCrypt.Verify(Contrasena, usuarioEncontrado.Contrasena);
+            throw new Exception("Email, o contraseña incorrectos");
 
+        bool passwordCorrecta = BCrypt.Net.BCrypt.Verify(Contrasena, usuarioEncontrado.Contrasena);
+        if (!passwordCorrecta)
+        {
+            throw new Exception("Email o contraseña incorrectos");
+        }
         return usuarioEncontrado;
 
     }
