@@ -32,5 +32,19 @@ namespace backend.Services
         {
             return await _context.Salarios.FindAsync(id);
         }
+
+        public async Task<Salario> ActualizarSalario(Salario salario)
+        {
+            _context.Salarios.Update(salario);
+            await _context.SaveChangesAsync();
+            return salario;
+        }
+
+        public async Task<bool> EliminarSalario(int id)
+        {
+            var salario = await _context.Salarios.Remove(salario);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

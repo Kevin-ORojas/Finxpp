@@ -25,5 +25,9 @@ namespace backend.Controllers
 
         }
 
+        public async Task<IActionResult> ActualizarSalario(int id, [FromBody] Salario salario)
+        {
+            if (!id == salario.Id) return BadRequest("El id no coincide");
+        }
     }
 }
