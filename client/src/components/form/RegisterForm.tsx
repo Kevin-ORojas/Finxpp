@@ -1,14 +1,15 @@
-import { Box, TextField } from "@mui/material";
-import { useState } from "react";
-import ButtonForm from "./ButtonForm";
+import { Box, Button, TextField } from "@mui/material";
+import ButtonForm from "./ui/ButtonForm";
 
-function RegisterForm() {
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+function LoginForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
   });
-
   const [isRegistered, setIsRegistered] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,7 +23,6 @@ function RegisterForm() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-
   return (
     <Box
       component="form"
@@ -48,13 +48,6 @@ function RegisterForm() {
         }}
       >
         <TextField
-          label="Nombre"
-          name="name"
-          variant="outlined"
-          value={form.name}
-          onChange={handleChange}
-        />
-        <TextField
           label="Email"
           variant="outlined"
           name="email"
@@ -69,24 +62,22 @@ function RegisterForm() {
           onChange={handleChange}
         />
         <ButtonForm />
-        {/* <Box
+        <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
           }}
         >
-          {isRegistered ? (
-            <>
-              ¿Estás registrado? <LoginForm />
-            </>
-          ) : (
-            "Por favor, regístrate primero."
+          {isRegistered && (
+            <Button component={Link} to="/register">
+              ¿Estás registrado?
+            </Button>
           )}
-        </Box> */}
+        </Box>
       </Box>
     </Box>
   );
 }
 
-export default RegisterForm;
+export default LoginForm;

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../../pages/Dashboard";
-import RegisterForm from "../form/ui/RegisterForm";
-import LoginForm from "../form/LoginForm";
+import RegisterForm from "../form/RegisterForm";
+import LoginForm from "../form/RegisterForm";
 import Transaccion from "../transaccion/Transaccion";
 import Historial from "../historial/Historial";
 
