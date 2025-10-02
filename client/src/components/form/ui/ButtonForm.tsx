@@ -1,14 +1,21 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, ButtonProps } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import { FC } from "react";
 
-function ButtonForm() {
+// Componente tipado como FC con props de Button
+const ButtonForm: FC<ButtonProps> = ({ children, ...props }) => {
   return (
     <Box>
-      <Button type="submit" variant="contained" endIcon={<SendIcon />}>
-        Send
+      <Button
+        type="submit"
+        variant="contained"
+        endIcon={<SendIcon />}
+        {...props} // 👈 aquí entran disabled, onClick, etc.
+      >
+        {children}
       </Button>
     </Box>
   );
-}
+};
 
 export default ButtonForm;

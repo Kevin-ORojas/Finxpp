@@ -1,6 +1,6 @@
 import type { AuthResponse, LoginData, RegisterData } from "../interfaces/auth";
 
-const API_URL = "http://localhost:5256/api/Auth/register";
+const API_URL = "http://localhost:5256/api/Auth";
 
 export const registerUser = async (
   data: RegisterData

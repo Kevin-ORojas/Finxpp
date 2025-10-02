@@ -1,28 +1,45 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import ButtonForm from "./ui/ButtonForm";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { registerUser } from "../api/Auth";
+import { RegisterData } from "../interfaces/auth";
 
-function LoginForm() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+function RegisterForm() {
   const [isRegistered, setIsRegistered] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Login con:", form);
+  const [form, setForm] = useState<RegisterData>({
+    nombre: "",
+    email: "",
+    contrasena: "",
+  });
 
-    setIsRegistered(true);
-  };
-
+  // manejamos de cambios de los inputs
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
+
+  // enviar datos de la API
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const result = await registerUser(form);
+      console.log("Usuario registrado", result);
+      setMessage("✅ Registro exitoso, ahora puedes iniciar sesión.");
+      setIsRegistered(true);
+    } catch (error) {
+      console.error(error);
+      setMessage("❌ Hubo un problema con el registro.");
+      setLoading(false);
+    }
+  };
+
   return (
     <Box
       component="form"
@@ -48,36 +65,41 @@ function LoginForm() {
         }}
       >
         <TextField
-          label="Email"
+          label="Nombre"
           variant="outlined"
+          name="nombre"
+          value={form.nombre}
+          onChange={handleChange}
+        />
+        <TextField
+          label="Email"
           name="email"
+          variant="outlined"
           value={form.email}
           onChange={handleChange}
         />
         <TextField
-          label="Password"
-          name="password"
+          label="contrasena"
+          name="contrasena"
           variant="outlined"
-          value={form.password}
+          value={form.contrasena}
           onChange={handleChange}
         />
-        <ButtonForm />
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          {isRegistered && (
-            <Button component={Link} to="/register">
-              ¿Estás registrado?
-            </Button>
-          )}
-        </Box>
+
+        <ButtonForm disabled={loading}>
+          {loading ? "Registrando..." : "Registrarse"}
+        </ButtonForm>
+
+        {message && (
+          <Typography color={isRegistered ? "green" : "red"}>
+            {message}
+          </Typography>
+        )}
+
+        {isRegistered && <Link to="/login">Ir a Login</Link>}
       </Box>
     </Box>
   );
 }
 
-export default LoginForm;
+export default RegisterForm;
