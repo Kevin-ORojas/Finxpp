@@ -10,4 +10,7 @@ public class Usuario
 
     public string Contrasena { get; set; } = string.Empty;
 
+    //relacion entre salario y usuarios
+    public List<Salario> salarios { get; set; };
+
 }

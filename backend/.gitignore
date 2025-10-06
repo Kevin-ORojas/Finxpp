@@ -10,3 +10,5 @@ obj/
 
 # Otros temporales
 *.log
+
+.gitignore
