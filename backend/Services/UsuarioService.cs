@@ -4,6 +4,9 @@ using backend.Services.Interfaces;
 
 namespace backend.Services;
 
+
+
+
 public class UsuarioService : IUsuarioService
 {
     private readonly AppDbContext _context;
@@ -29,5 +32,4 @@ public class UsuarioService : IUsuarioService
     }
 
 }
-
 

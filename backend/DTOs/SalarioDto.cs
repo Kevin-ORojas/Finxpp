@@ -1,4 +1,4 @@
 namespace backend.DTOs
 {
-    public record SalarioDTOs (decimal monto, int Id)
+    public record SalarioDTOs (decimal monto, int Id);
 }
