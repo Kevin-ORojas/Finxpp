@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import ButtonForm from "./ui/ButtonForm";
 
 import { useState } from "react";
@@ -54,8 +54,10 @@ function RegisterForm() {
       <Box
         sx={{
           border: "2px solid",
+          background: "#fff",
+          borderColor: "#031926",
           padding: "3rem",
-          borderRadius: 5,
+          borderRadius: 3,
           boxShadow: 3,
           display: "flex",
           width: "100%",
@@ -64,6 +66,7 @@ function RegisterForm() {
           gap: 2,
         }}
       >
+        <h1>Registrate</h1>
         <TextField
           label="Nombre"
           variant="outlined"
@@ -81,6 +84,7 @@ function RegisterForm() {
         <TextField
           label="contrasena"
           name="contrasena"
+          type="password"
           variant="outlined"
           value={form.contrasena}
           onChange={handleChange}

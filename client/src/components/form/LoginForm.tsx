@@ -1,5 +1,7 @@
+import { Box } from "@mui/material";
+
 function LoginForm() {
-  return <div></div>;
+  return <Box></Box>;
 }
 
 export default LoginForm;
