@@ -5,28 +5,26 @@ using backend.Services.Interfaces;
 namespace backend.Services;
 
 
-
-
-public class UsuarioService : IUsuarioService
+public class UsersService : IUsersService
 {
     private readonly AppDbContext _context;
 
-        public UsuarioService(AppDbContext context)
+        public UsersService(AppDbContext context)
         {
             _context = context;
         }
 
-    public List<UsuarioResponse> ListarUsuarios()
+    public List<UserResponse> ListUsers()
     {
 
         //obtenemos los usuarios de la DB
-        var usuarios = _context.Usuarios.ToList();
+        var user = _context.Users.ToList();
 
             // mapeamos los modelos de DTOs
 
-            return usuarios.Select(u => new UsuarioResponse(
+            return user.Select(u => new UserResponse(
                 u.Id,
-                u.Nombre,
+                u.Name,
                 u.Email
                 )).ToList();
     }

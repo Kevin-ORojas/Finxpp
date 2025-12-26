@@ -1,4 +1,4 @@
 namespace backend.DTOs
 {   
-    public record LoginRequest (string Email, string Contrasena);
+    public record LoginRequest (string Email, string Password);
 };

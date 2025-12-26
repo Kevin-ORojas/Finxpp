@@ -1,3 +1,3 @@
 namespace backend.DTOs{
-public record RegisterRequest (string Nombre, string Email, string Contrasena);
+public record RegisterRequest (string Name, string Email, string Password);
 }

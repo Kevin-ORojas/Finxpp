@@ -4707,11 +4707,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\backend.csproj",
+      "projectUniqueName": "J:\\Document\\Codigo\\Finxpp\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\backend.csproj",
+      "projectPath": "J:\\Document\\Codigo\\Finxpp\\backend\\backend.csproj",
       "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\obj\\",
+      "outputPath": "J:\\Document\\Codigo\\Finxpp\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

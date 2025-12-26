@@ -14,39 +14,39 @@ public class AuthService : IAuthService
         _context = context; 
     }
 
-    public Usuario Register(RegisterRequest request)
+    public User Register(RegisterRequest request)
     {
-        if (string.IsNullOrEmpty(request.Nombre) ||
+        if (string.IsNullOrEmpty(request.Name) ||
             string.IsNullOrEmpty(request.Email) ||
-            string.IsNullOrEmpty(request.Contrasena))
+            string.IsNullOrEmpty(request.Password))
             throw new Exception("Debe completar todos los campos requeridos");
 
-        if (_context.Usuarios.Any(u => u.Email == request.Email))
+        if (_context.Users.Any(u => u.Email == request.Email))
             throw new Exception("El email ya está registrado");
 
-        var usuario = new Usuario
+        var user = new User
         {
-            Nombre = request.Nombre,
+            Name = request.Name,
             Email = request.Email,
-            Contrasena = BCrypt.Net.BCrypt.HashPassword(request.Contrasena)
+            Password = BCrypt.Net.BCrypt.HashPassword(request.Password)
         };
 
-        _context.Usuarios.Add(usuario);
+        _context.Users.Add(user);
         _context.SaveChanges();
-        return usuario;
+        return user;
     }
 
-    public Usuario Login(string email, string contrasena)
+    public User Login(string email, string password)
     {
-        var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
+        var user = _context.Users.FirstOrDefault(u => u.Email == email);
 
-        if (usuario == null)
+        if (user == null)
             throw new Exception("Email o contraseña incorrectos");
 
-        var passwordCorrecta = BCrypt.Net.BCrypt.Verify(contrasena, usuario.Contrasena);
+        var passwordCorrecta = BCrypt.Net.BCrypt.Verify(password, user.Password);
         if (!passwordCorrecta)
             throw new Exception("Email o contraseña incorrectos");
 
-        return usuario;
+        return user;
     }
 }

@@ -5,6 +5,6 @@ namespace backend.Services.Interfaces;
 
 public interface IAuthService
 {
-	Usuario Register(RegisterRequest request);
-	Usuario Login(string Email, string contrasena);
+	User Register(RegisterRequest request);
+	User Login(string Email, string Password);
 }
