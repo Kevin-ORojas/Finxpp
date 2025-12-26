@@ -43,11 +43,19 @@ function Transaccion() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
   return (
-    <Box>
+    <Box
+      sx={{
+        backgroundColor: "#fff",
+        height: "auto",
+        minHeight: "100%",
+        p: "10px",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          backgroundColor: "#fff",
         }}
       >
         <TextField

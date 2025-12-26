@@ -5,7 +5,7 @@ function Dashboard() {
   return (
     <Box
       sx={{
-        backgroundColor: "#4643A2",
+        backgroundColor: "#fff",
         minHeight: 600,
         borderRadius: 4,
       }}

@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Models\\Usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Models\\Usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Models\\Salario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Models\\Salario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\UsuarioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Services\\UsuarioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\UsuarioResponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\DTOs\\UsuarioResponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\IUsuariosService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Services\\Interfaces\\IUsuariosService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\ISalarioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Services\\Interfaces\\ISalarioService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\SalarioDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\DTOs\\SalarioDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\NuevoSalario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\DTOs\\NuevoSalario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\IAuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Services\\Interfaces\\IAuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Salario.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Models\\Salario.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\Salario.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Models\\Salario.cs",
+              "RelativeToolTip": "backend\\Models\\Salario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T17:06:22.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioResponse.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\UsuarioResponse.cs",
+              "RelativeDocumentMoniker": "backend\\DTOs\\UsuarioResponse.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\UsuarioResponse.cs",
+              "RelativeToolTip": "backend\\DTOs\\UsuarioResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:42:08.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Models\\Usuario.cs",
+              "RelativeToolTip": "backend\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:39:24.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SalarioDto.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\SalarioDto.cs",
+              "RelativeDocumentMoniker": "backend\\DTOs\\SalarioDto.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\SalarioDto.cs",
+              "RelativeToolTip": "backend\\DTOs\\SalarioDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:39:03.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "backend\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:34:36.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NuevoSalario.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\NuevoSalario.cs",
+              "RelativeDocumentMoniker": "backend\\DTOs\\NuevoSalario.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\DTOs\\NuevoSalario.cs",
+              "RelativeToolTip": "backend\\DTOs\\NuevoSalario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:37:04.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsuariosService.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\IUsuariosService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\Interfaces\\IUsuariosService.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\IUsuariosService.cs",
+              "RelativeToolTip": "backend\\Services\\Interfaces\\IUsuariosService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:33:43.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "backend\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:32:59.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ISalarioService.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\ISalarioService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\Interfaces\\ISalarioService.cs",
+              "ToolTip": "C:\\Users\\kevin\\OneDrive\\Desktop\\Codigo\\Finxpp\\backend\\Services\\Interfaces\\ISalarioService.cs",
+              "RelativeToolTip": "backend\\Services\\Interfaces\\ISalarioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:32:53.559Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
