@@ -27,7 +27,7 @@ public class InventoryService : IInventoryService
     public async Task<InventoryResponse> GetInventory(int id)   // ✅ implementación que faltaba
     {
         var inventory = await _context.Inventories.FindAsync(id)
-            ?? throw new Exception("Inventario no encontrado");
+            ?? throw new Exception("Inventory not found");
 
         return new InventoryResponse(
             inventory.Id,
@@ -61,8 +61,8 @@ public class InventoryService : IInventoryService
 
     public async Task DeleteInventory(int id)
     {
-        var inventory = _context.Inventories.Find(id)
-            ?? throw new Exception("Inventario no encontrado");
+        var inventory = await _context.Inventories.FindAsync(id)
+            ?? throw new Exception("Inventory not found");
 
         _context.Inventories.Remove(inventory);
         await _context.SaveChangesAsync();
@@ -71,7 +71,7 @@ public class InventoryService : IInventoryService
     public async Task<InventoryResponse> UpdateInventory(int id, InventoryRequest request)
     {
         var inventory = await _context.Inventories.FindAsync(id)
-            ?? throw new Exception("Inventario no encontrado");
+            ?? throw new Exception("Inventory not found");
 
         inventory.Name = request.Name;
         inventory.Description = request.Description;

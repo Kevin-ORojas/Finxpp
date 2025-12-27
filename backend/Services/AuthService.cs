@@ -11,7 +11,7 @@ public class AuthService : IAuthService
 
     public AuthService(AppDbContext context)
     {
-        _context = context; 
+        _context = context;
     }
 
     public User Register(RegisterRequest request)
@@ -19,10 +19,10 @@ public class AuthService : IAuthService
         if (string.IsNullOrEmpty(request.Name) ||
             string.IsNullOrEmpty(request.Email) ||
             string.IsNullOrEmpty(request.Password))
-            throw new Exception("Debe completar todos los campos requeridos");
+            throw new Exception("you must complete all required fields");
 
         if (_context.Users.Any(u => u.Email == request.Email))
-            throw new Exception("El email ya está registrado");
+            throw new Exception("The email is already registered");
 
         var user = new User
         {
@@ -41,11 +41,11 @@ public class AuthService : IAuthService
         var user = _context.Users.FirstOrDefault(u => u.Email == email);
 
         if (user == null)
-            throw new Exception("Email o contraseña incorrectos");
+            throw new Exception("Email o Password invalid");
 
         var passwordCorrecta = BCrypt.Net.BCrypt.Verify(password, user.Password);
         if (!passwordCorrecta)
-            throw new Exception("Email o contraseña incorrectos");
+            throw new Exception("Password invalid");
 
         return user;
     }

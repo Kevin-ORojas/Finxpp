@@ -36,7 +36,7 @@ public class AuthController : ControllerBase
         try
         {
             var user = _authService.Login(request.Email, request.Password);
-            return Ok(new { mensaje = "Login Exitoso", user });
+            return Ok(new { mensaje = "Login successful", user });
         }
         catch (Exception ex)
         {
