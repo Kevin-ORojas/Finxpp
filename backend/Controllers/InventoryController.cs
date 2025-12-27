@@ -22,9 +22,11 @@ public class InventoryController : ControllerBase
     [HttpGet]
     public ActionResult<List<InventoryResponse>> GetAll() => _service.ListInventories();
 
-    //[HttpGet("{id}")]
+    [HttpGet("{id}")]
+    public ActionResult<InventoryResponse> Get(int id) => _service.GetInventory(id);
 
-    //[HttpPost]
+    [HttpPost]
+    public ActionResult<InventoryResponse> Create(InventoryRequest request) => _service.CreateInventory(request);
 
     //[HttpPut("{id}")]
 
