@@ -28,7 +28,14 @@ public class InventoryController : ControllerBase
     [HttpPost]
     public ActionResult<InventoryResponse> Create(InventoryRequest request) => _service.CreateInventory(request);
 
-    //[HttpPut("{id}")]
+    [HttpPut("{id}")]
+    public ActionResult<InventoryResponse> Update(int id, InventoryRequest request) => _service.UpdateInventory(id, request);
 
-    //[HttpDelete("{id}")]
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _service.DeleteInventory(id);
+        return NoContent();
+    }
 }

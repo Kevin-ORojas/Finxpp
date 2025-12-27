@@ -58,5 +58,35 @@ public class InventoryService : IInventoryService
             inventory.Quantity
             );
     }
+
+    public async Task DeleteInventory(int id)
+    {
+        var inventory = _context.Inventories.Find(id)
+            ?? throw new Exception("Inventario no encontrado");
+
+        _context.Inventories.Remove(inventory);
+        await _context.SaveChangesAsync();
+    }
+
+    public InventoryResponse UpdateInventory(int id, InventoryRequest request)
+    {
+        var inventory = _context.Inventories.Find(id)
+            ?? throw new Exception("Inventario no encontrado");
+
+        inventory.Name = request.Name;
+        inventory.Description = request.Description;
+        inventory.Price = request.Price;
+        inventory.Quantity = request.Quantity;
+
+        _context.SaveChanges();
+
+        return new InventoryResponse(
+            inventory.Id,
+            inventory.Name,
+            inventory.Description,
+            inventory.Price,
+            inventory.Quantity
+            );
+    }
 };
 
