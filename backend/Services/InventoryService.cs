@@ -14,7 +14,7 @@ public class InventoryService : IInventoryService
         _context = context;
     }
 
-    public List<InventoryResponse> ListInventories()
+    public async Task<List<InventoryResponse>> ListInventories()
     {
         return _context.Inventories.Select(i => new InventoryResponse(
             i.Id,
@@ -24,9 +24,9 @@ public class InventoryService : IInventoryService
             i.Quantity)).ToList();
     }
 
-    public InventoryResponse GetInventory(int id)   // ✅ implementación que faltaba
+    public async Task<InventoryResponse> GetInventory(int id)   // ✅ implementación que faltaba
     {
-        var inventory = _context.Inventories.Find(id)
+        var inventory = await _context.Inventories.FindAsync(id)
             ?? throw new Exception("Inventario no encontrado");
 
         return new InventoryResponse(
@@ -38,7 +38,7 @@ public class InventoryService : IInventoryService
     }
 
 
-    public InventoryResponse CreateInventory(InventoryRequest request)
+    public async Task<InventoryResponse> CreateInventory(InventoryRequest request)
     {
         var inventory = new Inventory
         {
@@ -48,7 +48,7 @@ public class InventoryService : IInventoryService
             Quantity = request.Quantity
         };
         _context.Inventories.Add(inventory);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return new InventoryResponse(
             inventory.Id,
@@ -68,9 +68,9 @@ public class InventoryService : IInventoryService
         await _context.SaveChangesAsync();
     }
 
-    public InventoryResponse UpdateInventory(int id, InventoryRequest request)
+    public async Task<InventoryResponse> UpdateInventory(int id, InventoryRequest request)
     {
-        var inventory = _context.Inventories.Find(id)
+        var inventory = await _context.Inventories.FindAsync(id)
             ?? throw new Exception("Inventario no encontrado");
 
         inventory.Name = request.Name;
@@ -78,7 +78,7 @@ public class InventoryService : IInventoryService
         inventory.Price = request.Price;
         inventory.Quantity = request.Quantity;
 
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return new InventoryResponse(
             inventory.Id,

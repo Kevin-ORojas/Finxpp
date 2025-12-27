@@ -17,20 +17,17 @@ public class InventoryController : ControllerBase
         _service = service;
     }
 
-
-
     [HttpGet]
-    public ActionResult<List<InventoryResponse>> GetAll() => _service.ListInventories();
+    public async Task<ActionResult<List<InventoryResponse>>> GetAll() => await _service.ListInventories();
 
     [HttpGet("{id}")]
-    public ActionResult<InventoryResponse> Get(int id) => _service.GetInventory(id);
-
-    [HttpPost]
-    public ActionResult<InventoryResponse> Create(InventoryRequest request) => _service.CreateInventory(request);
+    public async Task<ActionResult<InventoryResponse>> Get(int id) => await _service.GetInventory(id);
 
     [HttpPut("{id}")]
-    public ActionResult<InventoryResponse> Update(int id, InventoryRequest request) => _service.UpdateInventory(id, request);
+    public async Task<ActionResult<InventoryResponse>> Update(int id, InventoryRequest request) => await _service.UpdateInventory(id, request);
 
+    [HttpPost]
+    public async Task<ActionResult<InventoryResponse>> Create(InventoryRequest request) => await _service.CreateInventory(request);
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
