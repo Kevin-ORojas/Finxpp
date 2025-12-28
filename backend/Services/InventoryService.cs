@@ -2,6 +2,7 @@
 using backend.DTOs;
 using backend.Models;
 using backend.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Services;
 
@@ -40,15 +41,50 @@ public class InventoryService : IInventoryService
 
     public async Task<InventoryResponse> CreateInventory(InventoryRequest request)
     {
+
+
+        string name = request.Name?.Trim() ?? "";
+
+        if (string.IsNullOrEmpty(name))
+        {
+            throw new Exception("Name cannot be empty");
+        }
+        name = name.ToLower();
+
+        bool exits = await _context.Inventories.AnyAsync(i => i.Name == name);
+        if (exits)
+        {
+            throw new Exception("Inventory with the same name already exists");
+        }
+
+        if (request.Quantity < 0)
+        {
+            throw new Exception("Quantity cannot be negative");
+        }
+
+        if (request.Price <= 0)
+        {
+            throw new Exception("Price cannot be negative");
+        }
+
         var inventory = new Inventory
         {
-            Name = request.Name,
+            Name = name,
             Description = request.Description,
             Price = request.Price,
             Quantity = request.Quantity
         };
-        _context.Inventories.Add(inventory);
-        await _context.SaveChangesAsync();
+
+
+        try
+        {
+            _context.Inventories.Add(inventory);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException)
+        {
+            throw new InvalidOperationException("Inventory name already exists (DB constraint)");
+        }
 
         return new InventoryResponse(
             inventory.Id,
@@ -72,6 +108,11 @@ public class InventoryService : IInventoryService
     {
         var inventory = await _context.Inventories.FindAsync(id)
             ?? throw new Exception("Inventory not found");
+
+        if (request.Quantity < 0)
+        {
+            throw new Exception("Quantity cannot be negative");
+        }
 
         inventory.Name = request.Name;
         inventory.Description = request.Description;
