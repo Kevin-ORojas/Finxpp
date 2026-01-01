@@ -7,6 +7,10 @@ public class InvoiceLine
     public int InvoiceId { get; set; }
     public Invoice Invoice { get; set; } = null!;
 
+    public int InventoryId { get; set; }
+    public Inventory Inventory { get; set; } = null!;
+
+
     public string Description { get; set; } = string.Empty;
 
     public int Quantity { get; set; }

@@ -6,12 +6,17 @@ public class CreateInvoiceRequest
     public List<CreateInvoiceItemRequest> Items { get; set; } = new();
 
 
+
+
 }
 
 public class CreateInvoiceItemRequest
 {
     public int ProductId { get; set; }
     public int Quantity { get; set; }
+
+    public int name { get; set; }
+    public int InventoryId { get; set; }
 }
 
 
