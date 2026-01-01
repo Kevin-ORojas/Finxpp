@@ -12,4 +12,8 @@ public class AppDbContext : DbContext
     //public DbSet<Salario> Salarios { get; set; }
 
     public DbSet<Inventory> Inventories { get; set; }
+
+    public DbSet<Invoice> Invoices { get; set; }
+
+    public DbSet<InvoiceLine> InvoiceLines { get; set; }
 }

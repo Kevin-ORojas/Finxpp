@@ -15,14 +15,15 @@ public class InventoryService : IInventoryService
         _context = context;
     }
 
+    //! crea un objeto de tipo InventoryResponse por cada inventario en la base de datos
     public async Task<List<InventoryResponse>> ListInventories()
     {
-        return _context.Inventories.Select(i => new InventoryResponse(
+        return await _context.Inventories.Select(i => new InventoryResponse(
             i.Id,
             i.Name,
             i.Description,
             i.Price,
-            i.Quantity)).ToList();
+            i.Quantity)).ToListAsync();
     }
 
     public async Task<InventoryResponse> GetInventory(int id)   // ✅ implementación que faltaba
