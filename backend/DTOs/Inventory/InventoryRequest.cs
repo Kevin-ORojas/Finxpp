@@ -6,11 +6,3 @@ public record InventoryRequest(
     int Quantity,
     decimal Price
     );
-
-public record InventoryResponse(
-    int Id, 
-    string Name,
-    string Description,
-    decimal Price,
-    int Quantity
-    );

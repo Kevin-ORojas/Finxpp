@@ -3,7 +3,6 @@
 using backend.DTOs;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
-using Namespace.DTOs;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -16,19 +15,19 @@ public class InvoiceController : ControllerBase
         _invoiceService = invoiceService;
     }
 
-
     [HttpPost]
     public async Task<ActionResult<InvoiceResponse>> Create([FromBody] CreateInvoiceRequest request)
     {
         try
         {
             var invoiceId = await _invoiceService.CreateInvoice(request);
-            return Ok(new { InvoiceId = invoiceId });
+            return CreatedAtAction(nameof(Create), new { id = invoiceId }, new { InvoiceId = invoiceId });
         }
         catch (Exception ex)
         {
             return BadRequest(new { Message = ex.Message });
         }
     }
+
 
 }

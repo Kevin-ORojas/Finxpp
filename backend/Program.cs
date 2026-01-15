@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using backend.Data;
 using backend.Services;
 using backend.Services.Interfaces;
+using backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IInventoryService, InventoryService>() ;
+builder.Services.AddScoped<IInventoryService, InventoryService>();
+builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 
 // ? HABILITAR CORS
 builder.Services.AddCors(options =>
@@ -25,7 +27,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(
-            "http://localhost:5173", // ?? Vite (React + TS normalmente corre aquí)
+            "http://localhost:5173", // ?? Vite (React + TS normalmente corre aquï¿½)
             "http://localhost:3000"  // ?? CRA (si usas Create React App)
         )
         .AllowAnyHeader()
