@@ -58,7 +58,6 @@ public class InvoiceService : IInvoiceService
                     throw new Exception($"Insufficient inventory for item ID {item.InventoryId}. Available: {Inventory.Quantity}, Requested: {item.Quantity}");
                 }
 
-
                 var invoiceLine = new InvoiceLine
                 {
                     Invoice = invoice,

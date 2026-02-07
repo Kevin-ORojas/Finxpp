@@ -15,7 +15,6 @@ public class InventoryService : IInventoryService
         _context = context;
     }
 
-    //! crea un objeto de tipo InventoryResponse por cada inventario en la base de datos
     public async Task<List<InventoryResponse>> ListInventories()
     {
         return await _context.Inventories.Select(i => new InventoryResponse(
@@ -26,7 +25,7 @@ public class InventoryService : IInventoryService
             i.Quantity)).ToListAsync();
     }
 
-    public async Task<InventoryResponse> GetInventory(int id)   // ✅ implementación que faltaba
+    public async Task<InventoryResponse> GetInventory(int id)
     {
         var inventory = await _context.Inventories.FindAsync(id)
             ?? throw new Exception("Inventory not found");
@@ -39,11 +38,8 @@ public class InventoryService : IInventoryService
             inventory.Quantity);
     }
 
-
     public async Task<InventoryResponse> CreateInventory(InventoryRequest request)
     {
-
-
         string name = request.Name?.Trim() ?? "";
 
         if (string.IsNullOrEmpty(name))
@@ -75,7 +71,6 @@ public class InventoryService : IInventoryService
             Price = request.Price,
             Quantity = request.Quantity
         };
-
 
         try
         {
