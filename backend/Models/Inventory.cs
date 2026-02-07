@@ -12,4 +12,6 @@ public class Inventory
     public int Quantity { get; set; }
 
     public decimal Price { get; set; }
+
+    public ICollection<InvoiceLine> InvoiceLines { get; set; } = new List<InvoiceLine>();
 };
